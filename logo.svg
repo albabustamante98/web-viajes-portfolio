@@ -1,0 +1,14 @@
+<svg viewBox="0 0 64 64" aria-labelledby="tituloLogo" role="img" xmlns="http://www.w3.org/2000/svg">
+    <title id="tituloLogo">Viajes Invernales - logo</title>
+    <defs>
+        <linearGradient id="degradoAzul" x1="0" x2="1">
+            <stop offset="0%" stop-color="#56d4ff" />
+            <stop offset="100%" stop-color="#0ea5e9" />
+        </linearGradient>
+        <filter id="sombraSuave" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.45" />
+        </filter>
+    </defs>
+    <polygon points="32,4 60,56 4,56" fill="url(#degradoAzul)" filter="url(#sombraSuave)" />
+    <polygon points="32,12 50,50 14,50" fill="#ffffff" transform="translate(1.6,2) scale(0.86)" />
+</svg>

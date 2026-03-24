@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Invernales - Experiencia Premium</title>
+    <link rel="stylesheet" href="estilowebviajes.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="encabezado-principal">
+        <div class="contenedor contenedor-encabezado">
+            <a href="#inicio" class="logotipo">
+                <svg class="logo-svg" viewBox="0 0 64 64" aria-labelledby="logoTitle" role="img"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <title id="logoTitle">Viajes Invernales - logo</title>
+                    <defs>
+                        <linearGradient id="gradBlue" x1="0" x2="1">
+                            <stop offset="0%" stop-color="#56d4ff" />
+                            <stop offset="100%" stop-color="#0ea5e9" />
+                        </linearGradient>
+                        <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.45" />
+                        </filter>
+                    </defs>
+                    <polygon points="32,4 60,56 4,56" fill="url(#gradBlue)" filter="url(#softShadow)" />
+                    <polygon points="32,12 50,50 14,50" fill="#ffffff" transform="translate(1.6,2) scale(0.86)" />
+                </svg>
+                <span class="logotipo-text">VIAJES INVERNALES</span>
+            </a>
+            <nav class="navegacion-principal">
+                <ul class="menu-lista">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#planifica">Planifica</a></li>
+                    <li><a href="#destinos">Destinos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="seccion-portada">
+            <div class="capa-oscura"></div>
+            <div class="contenido-portada">
+                <h1>La Nieve Te Espera</h1>
+                <p>Paisajes que cortan la respiración</p> <br>
+                <a href="#planifica" class="boton-accion">COMENZAR AVENTURA</a>
+            </div>
+        </section>
+
+        <section id="planifica" class="seccion-buscador">
+            <div class="contenedor">
+                <div class="caja-cristal entrada-animada">
+                    <h2>Diseña tu Escapada</h2>
+                    <form class="formulario-buscador" action="#destinos" method="GET">
+                        <div class="grupo-formulario">
+                            <label for="zona">ZONA</label>
+                            <select id="zona" name="zona" required>
+                                <option value="" disabled selected>Elige destino...</option>
+                                <option value="laponia">Escandinavia (Laponia)</option>
+                                <option value="canada">Norteamérica (Canadá)</option>
+                                <option value="alpes">Alpes Suizos (Zermatt)</option>
+                                <option value="austria">Europa Central (Austria)</option>
+                                <option value="japon">Asia (Alpes Japoneses)</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="experiencia">EXPERIENCIA</label>
+                            <select id="experiencia" name="experiencia" required>
+                                <option value="" disabled selected>Tipo de viaje...</option>
+                                <option value="auroras">Magia & Auroras Boreales</option>
+                                <option value="aventura">Aventura & Naturaleza</option>
+                                <option value="esqui">Esquí & Snowboard</option>
+                                <option value="relax">Romántico & Relax</option>
+                                <option value="cultura">Cultura & Tradición</option>
+                            </select>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="fecha">FECHA</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <button type="submit" class="boton-secundario">BUSCAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinos" class="seccion-destinos">
+            <div class="contenedor-full">
+                <h2 class="titulo-centrado">Destinos de Ensueño</h2>
+
+                <div class="marco-carrusel">
+                    <div class="pista-carrusel">
+                        <article class="tarjeta-destino">
+                            <a href="rovaniemi.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Laponia.png" alt="Laponia">
+                            <div class="info-tarjeta">
+                                <h3>Rovaniemi</h3>
+                                <p>Laponia, Finlandia</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="canada.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Canada.png" alt="Canada">
+                            <div class="info-tarjeta">
+                                <h3>Banff</h3>
+                                <p>Parque Nacional, Canadá</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="suiza.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Suiza.png" alt="Alpes Suizos">
+                            <div class="info-tarjeta">
+                                <h3>Zermatt</h3>
+                                <p>Alpes Suizos</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="japon.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Japón.png" alt="Japón">
+                            <div class="info-tarjeta">
+                                <h3>Shirakawa-go</h3>
+                                <p>Alpes Japoneses</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="austria.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Austria.png" alt="Austria">
+                            <div class="info-tarjeta">
+                                <h3>Hallstatt</h3>
+                                <p>La joya de Austria</p>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-destino">
+                            <a href="rovaniemi.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Laponia.png" alt="Laponia">
+                            <div class="info-tarjeta">
+                                <h3>Rovaniemi</h3>
+                                <p>Laponia, Finlandia</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="canada.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Canada.png" alt="Canada">
+                            <div class="info-tarjeta">
+                                <h3>Banff</h3>
+                                <p>Parque Nacional, Canadá</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="suiza.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Suiza.png" alt="Alpes Suizos">
+                            <div class="info-tarjeta">
+                                <h3>Zermatt</h3>
+                                <p>Alpes Suizos</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="japon.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Japón.png" alt="Japón">
+                            <div class="info-tarjeta">
+                                <h3>Shirakawa-go</h3>
+                                <p>Alpes Japoneses</p>
+                            </div>
+                        </article>
+                        <article class="tarjeta-destino">
+                            <a href="austria.html" class="enlace-fantasma"></a>
+                            <img src="Imagenes/Austria.png" alt="Austria">
+                            <div class="info-tarjeta">
+                                <h3>Hallstatt</h3>
+                                <p>La joya de Austria</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="seccion-nosotros">
+            <div class="contenedor contenedor-info-flex">
+                <div class="columna-imagen">
+                    <div class="marco-foto">
+                        <img src="Imagenes/Sobrenosotros.png" alt="Viajero">
+                    </div>
+                </div>
+                <div class="columna-texto">
+                    <span class="etiqueta">SOBRE NOSOTROS</span>
+                    <h2>Excelencia en Alta Montaña</h2>
+                    <p>Somos una agencia especializada en la gestión integral de experiencias turísticas invernales.
+                        Desde 2015, nuestro objetivo ha sido ofrecer un servicio de máxima calidad, conectando a
+                        nuestros clientes con los destinos más exclusivos del mundo.</p>
+
+                    <div class="caja-dato">
+                        <h3>+10 Años</h3>
+                        <p>De experiencia en el sector</p>
+                    </div>
+
+                    <p>Nuestro equipo de profesionales se encarga de cada detalle logístico para garantizar confort,
+                        seguridad y satisfacción en cada viaje.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="seccion-testimonios">
+            <div class="contenedor">
+                <h2 class="titulo-centrado">Voces Reales</h2>
+                <div class="marco-carrusel">
+                    <div class="pista-carrusel animacion-lenta">
+                        <article class="tarjeta-testimonio">
+                            <div class="estrellas">★★★★★</div>
+                            <p>"La mejor experiencia de mi vida. Ver las auroras fue mágico."</p>
+                            <h4>- Elena R.</h4>
+                        </article>
+                        <article class="tarjeta-testimonio">
+                            <div class="estrellas">★★★★★</div>
+                            <p>"Flipante. La organización de 10 y el hotel una pasada."</p>
+                            <h4>- Marco P.</h4>
+                        </article>
+                        <article class="tarjeta-testimonio">
+                            <div class="estrellas">★★★★★</div>
+                            <p>"Calidad-precio increíble. Repetiré el año que viene."</p>
+                            <h4>- Sofia L.</h4>
+                        </article>
+                        <article class="tarjeta-testimonio">
+                            <div class="estrellas">★★★★★</div>
+                            <p>"La mejor experiencia de mi vida. Ver las auroras fue mágico."</p>
+                            <h4>- Elena R.</h4>
+                        </article>
+                        <article class="tarjeta-testimonio">
+                            <div class="estrellas">★★★★★</div>
+                            <p>"Flipante. La organización de 10 y el hotel una pasada."</p>
+                            <h4>- Marco P.</h4>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion-contacto">
+            <div class="contenedor">
+                <div class="caja-cristal-contacto">
+                    <h2>Hablemos</h2>
+                    <p>Cuéntanos tu proyecto y te enviaremos una propuesta personalizada.</p>
+
+                    <form class="formulario-contacto" action="enviar.php" method="POST">
+                        <div class="campo">
+                            <label for="nombre-usuario">Nombre Completo</label>
+                            <input type="text" id="nombre-usuario" name="nombre" required
+                                placeholder="Ej: Alejandro García">
+                        </div>
+                        <div class="campo">
+                            <label for="email-usuario">Correo Electrónico</label>
+                            <input type="email" id="email-usuario" name="email" required placeholder="correo@.com">
+                        </div>
+                        <div class="campo">
+                            <label for="mensaje-usuario">Detalles del viaje</label>
+                            <textarea id="mensaje-usuario" rows="4" name="mensaje" placeholder="Estoy interesado en..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="boton-accion ancho-completo">ENVIAR CONSULTA</button>
+                    </form>
+
+                    <div class="info-extra-contacto">
+                        <p class="texto-visita">¿Prefieres visitarnos?</p>
+                        <a href="https://www.google.com/maps" target="_blank" class="enlace-mapa">
+                            📍 Ver oficinas en Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <p class="copyright">© 2025 Viajes Invernales - Todos los derechos reservados.</p>
+            <div class="enlaces-pie">
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="aviso-legal.html" target="_blank">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

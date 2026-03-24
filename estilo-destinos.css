@@ -1,0 +1,154 @@
+/* Portada más bajita que la de inicio */
+.portada-detalle {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+/* Estructura: Texto a la izquierda, Caja precio a la derecha */
+.grid-detalle {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding: 80px 0;
+}
+
+.contenedor h2 {
+    text-align: left;
+}
+
+/* Estilos del texto de información */
+.texto-detalle p {
+    margin-bottom: 20px;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+
+}
+
+.subtitulo-experiencias {
+    margin-top: 40px;
+    color: var(--color-acento);
+    font-family: var(--fuente-titulos);
+}
+
+.lista-experiencias {
+    list-style: none;
+    padding: 0;
+}
+
+
+.lista-experiencias li {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Caja lateral del precio */
+.caja-resumen {
+    background: rgba(30, 41, 59, 0.5);
+    /* Fondo oscuro semitransparente */
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    /* Se queda pegada al bajar */
+    top: 120px;
+}
+
+.caja-resumen p {
+    margin-bottom: 15px;
+}
+
+.precio-grande {
+    font-size: 3rem;
+    color: var(--color-acento);
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/*---BOTÓN DE RESERVA (ESTILO COMPLETO)--- */
+
+.boton-reserva {
+    background-color: var(--color-acento);
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 20px;
+}
+
+/* Efecto al pasar el ratón  */
+.boton-reserva:hover {
+    background-color: white;
+    color: var(--color-fondo-oscuro);
+    transform: translateY(-3px);
+    /* Se eleva un poquito */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.linea-separadora {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+}
+
+/* MÓVIL: Todo en una columna */
+@media (max-width: 768px) {
+    .grid-detalle {
+        grid-template-columns: 1fr;
+    }
+
+    .caja-resumen {
+        position: relative;
+        /* En móvil no la dejamos pegada */
+        top: 0;
+    }
+}
+
+/*---MEJORAS EN LA LISTA DE ACTIVIDADES--- */
+
+/* Hacemos la lista más elegante */
+.texto-detalle ul {
+    padding: 0;
+    list-style: none;
+    /* Quitamos los puntos feos por defecto */
+    margin-top: 20px;
+}
+
+/* Estilo de cada línea de la lista */
+.texto-detalle li {
+    font-size: 1.0rem;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.5;
+}
+
+/* Clase para pintar el icono de azul */
+.icono-tema {
+    color: #0ea5e9;
+    font-size: 1.4rem;
+    margin-top: -3px;
+}

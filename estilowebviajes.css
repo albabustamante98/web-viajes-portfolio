@@ -1,0 +1,683 @@
+/* --- VARIABLES --- */
+/* Aquí guardo los colores para no tener que repetirlos siempre */
+:root {
+    --color-fondo-oscuro: #0f172a;
+    --color-acento: #0ea5e9;
+    --color-texto: #f8fafc;
+    --color-texto-gris: #c7c9cb;
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-texto: 'Montserrat', sans-serif;
+}
+
+/*Quito los márgenes que vienen por defecto en el navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Para que al clicar en el menú baje suave */
+    scroll-padding-top: 100px;
+    font-size: 14px;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* Para centrar el contenido y que no se pegue a los bordes */
+.contenedor {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contenedor-full {
+    width: 100%;
+    overflow: hidden;
+}
+
+section {
+    padding: 50px 0;
+}
+
+/* --- TÍTULOS Y ENLACES --- */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuente-titulos);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* --- BARRA DE NAVEGACIÓN (HEADER) --- */
+.encabezado-principal {
+    background-color: rgba(15, 17, 42, 0.95);
+    backdrop-filter: blur(10px);
+    /* Pone el fondo borroso tipo cristal */
+    position: sticky;
+    /* Se queda pegado arriba al bajar */
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.encabezado-principal .contenedor {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.contenedor-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logotipo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+/* Tamaño del logo */
+.logo-svg {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    /* Para que no se aplaste en móvil */
+    flex: 0 0 auto;
+    display: block;
+}
+
+/* Estilo del texto del logo */
+.logotipo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    background: linear-gradient(to right, #ffffff, var(--color-acento));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* versión responsive: reduce el logo en pantallas pequeñas */
+@media (max-width: 768px) {
+    .logo-svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logotipo-text {
+        font-size: 1rem;
+    }
+}
+
+/* Lista del menú */
+.menu-lista {
+    display: flex;
+    list-style: none;
+    /* Quita los puntos de la lista */
+    gap: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.menu-lista a:hover {
+    color: var(--color-acento);
+}
+
+/* --- PORTADA (FONDO GRANDE) --- */
+.seccion-portada {
+    height: 100vh;
+    /* Ocupa toda la pantalla */
+    background-image: url('Imagenes/Portada.png');
+    background-attachment: fixed;
+    /* La imagen se queda quieta al bajar */
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.capa-oscura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Filtro negro transparente */
+}
+
+.contenido-portada {
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+
+}
+
+.contenido-portada h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+/* Botón principal */
+.boton-accion {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+
+}
+
+.boton-accion:hover {
+    transform: translateY(-2px);
+    /* Se mueve un poco hacia arriba */
+    background-color: white;
+    color: var(--color-fondo-oscuro);
+}
+
+/* BUSCADOR */
+.seccion-buscador {
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+    padding-top: 0;
+
+
+}
+
+.caja-cristal {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.caja-cristal h2 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.formulario-buscador {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas iguales */
+    gap: 15px;
+    align-items: end;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-acento);
+    text-transform: uppercase;
+    letter-spacing: 1.0px;
+    margin-left: 5px;
+}
+
+/* Inputs y Selects */
+input,
+select {
+    width: 100%;
+    height: 42px;
+    background-color: #020617;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 15px;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color-scheme: dark;
+}
+
+/* Efecto al pasar el ratón por encima */
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: #0f172a;
+    cursor: pointer;
+
+}
+
+/* EFECTO DE FOCO (RESPLANDOR) */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0ea5e9;
+}
+
+.boton-secundario {
+    width: 100%;
+    height: 42px;
+    background: transparent;
+    border: 2px solid var(--color-acento);
+    color: var(--color-acento);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+
+}
+
+.boton-secundario:hover {
+    background: var(--color-acento);
+    color: white;
+}
+
+/* --- DESTINOS (CARRUSEL) --- */
+.seccion-destinos {
+    padding: 80px 0;
+}
+
+.marco-carrusel {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+/* Pista que se mueve automáticamente */
+.pista-carrusel {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    animation: desplazamiento 80s linear infinite;
+}
+
+.pista-carrusel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.tarjeta-destino {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 360px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    background-color: #1e293b;
+}
+
+.tarjeta-destino img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.tarjeta-destino:hover img {
+    transform: scale(1.1);
+    /* Zoom a la imagen */
+
+
+}
+
+.info-tarjeta {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: fit-content;
+    max-width: 90%;
+    /* Fondo semitransparente redondeado */
+    background-color: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(1px);
+    /* Efecto cristal */
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.info-tarjeta h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.info-tarjeta p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* --- ENLACE FANTASMA (Para hacer clic en toda la tarjeta) --- */
+.enlace-fantasma {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    /* Se pone por encima de la imagen para poder clicarlo */
+    cursor: pointer;
+    /* Que salga la manita al pasar el ratón */
+}
+
+
+/* --- SOBRE NOSOTROS --- */
+.seccion-nosotros {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.contenedor-info-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.columna-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.marco-foto img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 12px 12px 0 var(--color-acento);
+}
+
+.columna-texto {
+    flex: 1;
+}
+
+.etiqueta {
+    color: var(--color-acento);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.columna-texto h2 {
+    color: white;
+    margin-top: 5px;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.columna-texto p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    font-weight: 300;
+}
+
+.caja-dato {
+    background: rgba(14, 165, 233, 0.05);
+    border-left: 3px solid var(--color-acento);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.caja-dato h3 {
+    color: var(--color-acento);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.caja-dato p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* --- OPINIONES --- */
+
+.tarjeta-testimonio {
+    flex: 0 0 auto;
+    width: 290px;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.estrellas {
+    color: #fbbf24;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.tarjeta-testimonio p {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.tarjeta-testimonio h4 {
+    text-align: right;
+    color: var(--color-acento);
+    font-size: 0.9rem;
+}
+
+/* --- CONTACTO --- */
+.seccion-contacto {
+    padding: 60px 0;
+    background-image: url('Imagenes/Fondoformulario.png');
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.caja-cristal-contacto {
+    background: rgba(15, 23, 42, 0.95);
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.caja-cristal-contacto h2 {
+    margin-bottom: 5px;
+}
+
+.caja-cristal-contacto p {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    color: #cbd5e1;
+}
+
+.formulario-contacto .campo {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.campo label {
+    font-size: 0.8rem;
+}
+
+textarea {
+    width: 100%;
+    background-color: #020617;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.ancho-completo {
+    width: 100%;
+    margin-top: 5px;
+    height: 45px;
+}
+
+/* --- INFO EXTRA CONTACTO --- */
+.info-extra-contacto {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Línea separadora */
+    padding-top: 15px;
+}
+
+.texto-visita {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    color: #94a3b8;
+}
+
+.enlace-mapa {
+    color: var(--color-acento);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- PIE DE PÁGINA --- */
+.pie-pagina {
+    background-color: #020617;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+.copyright {
+    color: white;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.enlaces-pie {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.enlaces-pie a {
+    color: var(--color-texto-gris);
+    font-size: 0.85rem;
+}
+
+.enlaces-pie a:hover {
+    color: var(--color-acento);
+}
+
+/* Barra de scroll personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0ea5e9;
+    border-radius: 4px;
+}
+
+/* --- MÓVIL Y TABLET --- */
+@media (max-width: 768px) {
+    .encabezado-principal .contenedor {
+        padding: 0 20px;
+    }
+
+    .contenedor-encabezado {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-lista {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .seccion-portada {
+        height: 70vh;
+    }
+
+    .contenido-portada h1 {
+        font-size: 2.5rem;
+    }
+
+    .formulario-buscador {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-info-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .columna-texto h2 {
+        font-size: 1.8rem;
+    }
+
+    .marco-foto img {
+        max-width: 100%;
+    }
+
+    .pista-carrusel {
+        animation: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tarjeta-destino,
+    .tarjeta-testimonio {
+        width: 90%;
+        max-width: 320px;
+    }
+}
